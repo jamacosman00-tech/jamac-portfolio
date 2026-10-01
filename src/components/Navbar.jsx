@@ -67,23 +67,21 @@ function Navbar() {
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         scrolled
           ? "border-b border-emerald-500/20 bg-[#051c15]/90 backdrop-blur-md shadow-lg shadow-black/40"
-          : "bg-transparent py-2"
+          : "border-b border-white/5 bg-[#051c15]/65 backdrop-blur-md"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-6">
         {/* Logo */}
         <a
           href="#home"
-          className="group flex items-center gap-1 text-2xl font-bold tracking-tight text-white transition hover:text-emerald-400"
-          aria-label="Jama Osman Abdille Home"
+          className="group flex shrink-0 items-center text-[1.7rem] font-bold tracking-tight text-white transition duration-300 hover:scale-[1.03]"
+          aria-label="Jamac Home"
         >
-          <span className="text-emerald-400 transition group-hover:-translate-x-0.5">&lt;</span>
-          <span>Jama</span>
-          <span className="text-emerald-400 transition group-hover:translate-x-0.5">/&gt;</span>
+          <span className="navbar-brand-text">Jamac</span>
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-0.5 xl:flex">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeSection === item.href.substring(1);
@@ -92,24 +90,27 @@ function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className={`relative flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium uppercase tracking-wider transition duration-200 ${
+                className={`relative flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-[11px] font-semibold uppercase tracking-wide transition duration-200 ${
                   isActive
                     ? "text-emerald-400 bg-emerald-500/10"
                     : "text-gray-300 hover:text-white hover:bg-white/[0.04]"
                 }`}
+                aria-current={isActive ? "location" : undefined}
               >
                 <Icon size={14} className={isActive ? "text-emerald-400" : "text-gray-400"} />
                 {item.name}
-                {isActive && (
-                  <span className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-emerald-400" />
-                )}
+                <span
+                  className={`absolute bottom-0 left-3 right-3 h-0.5 origin-center rounded-full bg-emerald-400 transition-transform duration-300 ${
+                    isActive ? "scale-x-100" : "scale-x-0"
+                  }`}
+                />
               </a>
             );
           })}
         </div>
 
         {/* Action Button Desktop */}
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <a
             href="#contact"
             className="inline-flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-emerald-300 transition duration-200 hover:bg-emerald-500 hover:text-black hover:border-emerald-400"
@@ -121,7 +122,7 @@ function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="inline-flex items-center justify-center rounded-lg border border-white/10 p-2 text-gray-300 hover:border-emerald-500/30 hover:text-emerald-400 focus:outline-none lg:hidden"
+          className="inline-flex items-center justify-center rounded-lg border border-white/10 p-2.5 text-gray-300 transition hover:border-emerald-500/30 hover:text-emerald-400 focus:outline-none xl:hidden"
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
         >
@@ -131,7 +132,7 @@ function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {menuOpen && (
-        <div className="fixed inset-0 top-[73px] z-40 flex flex-col bg-[#051c15]/95 backdrop-blur-xl border-t border-emerald-500/20 px-6 py-8 lg:hidden animate-in fade-in duration-200">
+        <div className="fixed inset-0 top-[73px] z-40 flex flex-col border-t border-emerald-500/20 bg-[#051c15]/95 px-6 py-8 backdrop-blur-xl xl:hidden animate-in fade-in duration-200">
           <div className="flex flex-col gap-2">
             {navItems.map((item) => {
               const Icon = item.icon;

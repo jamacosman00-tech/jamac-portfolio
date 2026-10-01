@@ -4,7 +4,7 @@ function CertificateCard({ certificate }) {
   const hasFile = Boolean(certificate.file);
 
   return (
-    <article className="group flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-emerald-500/30 hover:bg-white/[0.04]">
+    <article className="group flex h-full min-w-0 flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-emerald-500/30 hover:bg-white/[0.04]">
       <div>
         {/* Card Header: Icon & Date */}
         <div className="flex items-center justify-between">

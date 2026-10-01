@@ -4,6 +4,35 @@ html {
   scroll-behavior: smooth;
 }
 
+.navbar-brand-text {
+  background: linear-gradient(110deg, #fff 15%, #a7f3d0 50%, #fff 85%);
+  background-size: 220% 100%;
+  background-clip: text;
+  color: transparent;
+  animation: brand-sheen 8s ease-in-out infinite;
+}
+
+.group:hover .navbar-brand-text {
+  text-shadow: 0 0 18px rgb(52 211 153 / 35%);
+}
+
+@keyframes brand-sheen {
+  0%,
+  100% {
+    background-position: 100% 50%;
+  }
+
+  50% {
+    background-position: 0 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-brand-text {
+    animation: none;
+  }
+}
+
 /* Custom dark scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

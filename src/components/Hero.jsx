@@ -174,40 +174,33 @@ function Hero() {
 
             {/* VIEW 1: Jama's Portrait Photo */}
             {activeView === "photo" ? (
-              <div className="relative group overflow-hidden rounded-3xl border-2 border-emerald-500/30 bg-gradient-to-b from-emerald-500/10 via-transparent to-black/60 p-2 shadow-2xl shadow-emerald-950/60 backdrop-blur-xl transition duration-300 hover:border-emerald-400/50 hover:shadow-emerald-500/15">
-                {/* Photo Container */}
-                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-black/40">
-                  <img
-                    src={jamacPhoto}
-                    alt="Jama Osman Abdille - Computer Science Student"
-                    className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
-                  />
-
-                  {/* Gradient Vignette Overlay at base */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#051c15] via-transparent to-transparent opacity-80" />
-
-                  {/* Top Floating Badge */}
-                  <div className="absolute top-3 right-3 rounded-full border border-emerald-500/30 bg-[#051c15]/80 px-3 py-1 text-[11px] font-semibold text-emerald-300 backdrop-blur-md shadow-lg flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    CS Undergrad
+              <div className="flex flex-col items-center rounded-3xl border border-emerald-500/20 bg-gradient-to-b from-emerald-500/[0.08] to-black/20 px-6 py-8 shadow-xl shadow-emerald-950/40 backdrop-blur-xl transition duration-300 hover:border-emerald-400/40">
+                <div className="relative rounded-full border border-emerald-300/60 p-1.5 shadow-xl shadow-emerald-500/15">
+                  <div className="h-52 w-52 overflow-hidden rounded-full bg-black/40 sm:h-60 sm:w-60 lg:h-64 lg:w-64">
+                    <img
+                      src={jamacPhoto}
+                      alt="Jama Osman Abdille - Computer Science Student"
+                      className="h-full w-full rounded-full object-cover transition duration-500 hover:scale-[1.03]"
+                      style={{ objectPosition: "center 28%" }}
+                    />
                   </div>
+                  <span className="absolute bottom-3 right-3 rounded-full border border-emerald-500/30 bg-[#051c15]/90 px-3 py-1 text-[11px] font-semibold text-emerald-300 shadow-lg backdrop-blur-md">
+                    CS Undergrad
+                  </span>
+                </div>
 
-                  {/* Bottom Information Glass Card */}
-                  <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-emerald-500/30 bg-[#051c15]/90 p-3.5 backdrop-blur-md shadow-xl">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-sm font-bold text-white">
-                          Jama Osman Abdille
-                        </p>
-                        <p className="text-xs font-medium text-emerald-400 font-mono mt-0.5">
-                          Hormuud University • CS
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-1.5 rounded-lg border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-300">
-                        <CheckCircle2 size={12} className="text-emerald-400" />
-                        <span>Learning</span>
-                      </div>
-                    </div>
+                <div className="mt-6 flex w-full flex-wrap items-center justify-between gap-3 border-t border-emerald-500/15 pt-5">
+                  <div>
+                    <p className="text-sm font-bold text-white">
+                      Jama Osman Abdille
+                    </p>
+                    <p className="mt-0.5 font-mono text-xs font-medium text-emerald-400">
+                      Hormuud University • CS
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-1.5 rounded-lg border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-300">
+                    <CheckCircle2 size={12} className="text-emerald-400" />
+                    <span>Learning</span>
                   </div>
                 </div>
               </div>
